@@ -1,0 +1,30 @@
+{
+    "exclude":[
+        "(^vendor/)",
+        "(^bootstrap/)",
+        "(^resources/views/)",
+        "(^storage/)",
+        "(^tests/)",
+        "(^public/)"
+    ],
+    "linters":{
+        "php-l":{
+            "type":"php",
+            "include":"(\\.php$)",
+            "exclude":"(^tests/)"
+        },
+        "phplint":{
+            "type":"phpcs",
+            "include":"(\\.php$)",
+            "exclude":[
+                "(^tests/)"
+            ],
+            "severity":{
+                "PHPCS.W.Generic.Files.LineLength.TooLong":"advice"
+            },
+            "severity.rules":{
+                "(^PHPCS.E.PSR1.Classes.ClassDeclaration.MissingNamespace)":"warning"
+            }
+        }
+    }
+}
